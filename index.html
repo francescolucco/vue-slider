@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Vue Slider</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <div class="slider">
+
+        <div id="box-left" class="box-left">
+          <div class="slider-left active">
+            <img :src="images[counter]" alt="">
+            <div class="text-container">
+              <h3 class="active">{{titles[counter]}}</h3>
+              <p class="active">{{texts[counter]}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="slider-right" class="slider-right">
+          <div @click='nextSlide' class="box-font-top">
+            <i class="fa-solid fa-chevron-up"></i>
+          </div>
+          <div @click='prevSlide' class="box-font-bottom">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+
+          <div v-for='image in images' class="box-img-small">
+            <img class="" :src="image" alt="">
+            <div class="layover" :class='{active: (images[counter] === image)}'></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="js/vue.js"></script>
+</body>
+</html>
+
+
+
+
